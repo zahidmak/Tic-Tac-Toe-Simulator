@@ -1,0 +1,13 @@
+﻿<Application x:Class="Tic_Tac_Toe_Simulator.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <Style x:Key="Score Board">
+            <Setter Property="TextElement.FontFamily" Value="Fonts/#Score Board" />
+            <Setter Property="TextElement.Foreground" Value="Yellow"/>
+            <Setter Property="TextElement.FontSize" Value="48"></Setter>
+            <Setter Property="TextElement.FontWeight" Value="ExtraBold"></Setter>
+        </Style>
+    </Application.Resources>
+</Application>
