@@ -26,5 +26,10 @@ namespace Tic_Tac_Toe_Simulator
             InitializeComponent();
             MainGrid.DataContext = TicTacToe;
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
     }
 }

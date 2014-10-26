@@ -11,11 +11,10 @@ namespace Tic_Tac_Toe_Simulator
 {
     public class TicTacToe : INotifyPropertyChanged
     {
-        public ObservableCollection<int> Game = new ObservableCollection<int>();
+        public int[,] Game = new int[3,3];
 
         public TicTacToe()
         {
-            Game.Add(1);
            
         }
       
