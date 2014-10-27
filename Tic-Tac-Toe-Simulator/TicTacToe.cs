@@ -16,6 +16,7 @@ namespace Tic_Tac_Toe_Simulator
         private int oWins;
         private int ties;
        
+
         public int XWins { get { return xWins; } set { xWins = value; NotifyPropertyChanged(); } }
         public int OWins { get { return oWins; } set { oWins = value; NotifyPropertyChanged(); } }
         public int Ties { get { return ties; } set { ties = value; NotifyPropertyChanged(); } }
@@ -36,8 +37,21 @@ namespace Tic_Tac_Toe_Simulator
             }
            
         }
-        public void ChooseWinner(){
+        public void ChooseWinner()
+        {
+            for(int i=0; i<=2; i++)
+            {
+                for(int j=0;j<=2;j++)
+                {
+                    if(i==j)
+                    {
+                        if(this.Game[i,j]==1)
+                        {
 
+                        }
+                    }
+                }
+            }
         }
         public TicTacToe()
         {
