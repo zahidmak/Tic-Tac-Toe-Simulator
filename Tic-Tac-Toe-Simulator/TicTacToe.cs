@@ -39,17 +39,97 @@ namespace Tic_Tac_Toe_Simulator
         }
         public void ChooseWinner()
         {
-            for(int i=0; i<=2; i++)
+            //Verticals
+            if (Game[0, 0] == Game[1, 0] && Game[1, 0] == Game[2, 0] && Game[2, 0] != null)
             {
-                for(int j=0;j<=2;j++)
+                if (Game[0,0]==1)
                 {
-                    if(i==j)
-                    {
-                        if(this.Game[i,j]==1)
-                        {
+                    this.XWins = XWins + 1;
+                }
+                else
+                {
+                    this.OWins = OWins + 1;
+                }
+            }
+            if (Game[0, 1] == Game[1, 1] && Game[1, 1] == Game[2, 1] && Game[2, 1] != null)
+            {
+                if (Game[0, 1] == 1)
+                {
+                    this.XWins = XWins + 1;
+                }
+                else
+                {
+                    this.OWins = OWins + 1;
+                }
+            }
+            if (Game[0, 2] == Game[1, 2] && Game[1, 2] == Game[2, 2] && Game[2, 2] != null)
+            {
+                if (Game[0, 2] == 1)
+                {
+                    this.XWins = XWins + 1;
+                }
+                else
+                {
+                    this.OWins = OWins + 1;
+                }
+            }
 
-                        }
-                    }
+            //Horizontals
+            if (Game[0, 0] == Game[0, 1] && Game[0, 1] == Game[0, 2] && Game[0, 2] != null)
+            {
+                if (Game[0, 0] == 1)
+                {
+                    this.XWins = XWins + 1;
+                }
+                else
+                {
+                    this.OWins = OWins + 1;
+                }
+            }
+            if (Game[1, 0] == Game[1, 1] && Game[1, 1] == Game[1, 2] && Game[1, 2] != null)
+            {
+                if (Game[1, 0] == 1)
+                {
+                    this.XWins = XWins + 1;
+                }
+                else
+                {
+                    this.OWins = OWins + 1;
+                }
+            }
+            if (Game[2, 0] == Game[2, 1] && Game[2, 1] == Game[2, 2] && Game[2, 2] != null)
+            {
+                if (Game[2, 0] == 1)
+                {
+                    this.XWins = XWins + 1;
+                }
+                else
+                {
+                    this.OWins = OWins + 1;
+                }
+            }
+
+            //Diagonals
+            if (Game[0, 0] == Game[1, 1] && Game[1, 1] == Game[2, 2] && Game[2, 2] != null)
+            {
+                if (Game[0, 0] == 1)
+                {
+                    this.XWins = XWins + 1;
+                }
+                else
+                {
+                    this.OWins = OWins + 1;
+                }
+            }
+            if (Game[0, 2] == Game[1, 1] && Game[1, 1] == Game[2, 0] && Game[2, 0] != null)
+            {
+                if (Game[0, 2] == 1)
+                {
+                    this.XWins = XWins + 1;
+                }
+                else
+                {
+                    this.OWins = OWins + 1;
                 }
             }
         }
