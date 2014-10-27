@@ -16,14 +16,23 @@
             <ColumnDefinition Width="258*"></ColumnDefinition>
             <ColumnDefinition Width="132*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-
+        <ListBox Name="lb" Width="200" Height="50" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center"  ItemsSource="{Binding Path=Collection}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Position}" Margin="10"></TextBlock>
+                        <TextBlock Text="{Binding Value}" Margin="10"></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
         <Label Content="Tic Tac Toe Simulator" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22" FontWeight="Bold" Height="40" Margin="15,10,15,11" Width="228"/>
         <Label Content="WINS" Grid.Column="1" HorizontalAlignment="Left"  Grid.Row="1" VerticalAlignment="Top" FontSize="18" Height="34" Width="55"/>
         <Label Content="TIES" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Top" FontSize="18" Height="34" Margin="107,0" Width="44"/>
         <Label Content="WINS" Grid.Column="1" HorizontalAlignment="Right" Grid.Row="1" VerticalAlignment="Top" FontSize="18" Height="34" Width="55"/>
-        <Label Background="Black" Style="{StaticResource Score Board}" Content="00" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Bottom" FontSize="48" Height="68" Width="68"/>
-        <Label Background="Black" Style="{StaticResource Score Board}" Content="00" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Bottom" FontSize="48" Height="68" Margin="95,0" Width="68"/>
-        <Label Background="Black" Style="{StaticResource Score Board}" Content="00" Grid.Column="1" HorizontalAlignment="Right"  Grid.Row="1" VerticalAlignment="Bottom" FontSize="48" Height="68" Width="68"/>
+        <Label Background="Black" Style="{StaticResource Score Board}" Content="{Binding Path=XWins}" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Bottom" FontSize="48" Height="68" Width="68"/>
+        <Label Background="Black" Style="{StaticResource Score Board}" Content="{Binding Path=Ties}" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Bottom" FontSize="48" Height="68" Margin="95,0" Width="68"/>
+        <Label Background="Black" Style="{StaticResource Score Board}" Content="{Binding Path=OWins}" Grid.Column="1" HorizontalAlignment="Right"  Grid.Row="1" VerticalAlignment="Bottom" FontSize="48" Height="68" Width="68"/>
        
         <Grid Grid.Column="1" Grid.Row="2" Name="SecondGrid">
             
@@ -39,15 +48,15 @@
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
            
-            <Label Content="X" HorizontalAlignment="Center"  VerticalAlignment="Center" FontSize="48" FontWeight="Bold"/>
-            <Label Content="X" Grid.Column="1" HorizontalAlignment="Center"  VerticalAlignment="Center" FontSize="48" FontWeight="Bold"/>
-            <Label Content="X" Grid.Column="2" HorizontalAlignment="Center"  VerticalAlignment="Center" FontSize="48" FontWeight="Bold"/>
-            <Label Content="X" Grid.Column="2" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" FontSize="48" FontWeight="Bold"/>
-            <Label Content="X" Grid.Column="1" HorizontalAlignment="Center"  Grid.Row="1" VerticalAlignment="Center" FontSize="48" FontWeight="Bold"/>
-            <Label Content="X" HorizontalAlignment="Center"  Grid.Row="1" VerticalAlignment="Center" FontSize="48" FontWeight="Bold"/>
-            <Label Content="X" HorizontalAlignment="Center"  Grid.Row="2" VerticalAlignment="Center" FontSize="48" FontWeight="Bold"/>
-            <Label Content="X" Grid.Column="1" HorizontalAlignment="Center"  Grid.Row="2" VerticalAlignment="Center" FontSize="48" FontWeight="Bold"/>
-            <Label Content="X" Grid.Column="2" HorizontalAlignment="Center"  Grid.Row="2" VerticalAlignment="Center" FontSize="48" FontWeight="Bold"/>
+            <Label Content="{Binding Path=Collection[0].Value}" HorizontalAlignment="Center"  VerticalAlignment="Center" FontSize="48" FontWeight="Bold"/>
+            <Label Content="{Binding Path=Collection.A01}" Grid.Column="1" HorizontalAlignment="Center"  VerticalAlignment="Center" FontSize="48" FontWeight="Bold"/>
+            <Label Content="{Binding Path=Collection.A02}" Grid.Column="2" HorizontalAlignment="Center"  VerticalAlignment="Center" FontSize="48" FontWeight="Bold"/>
+            <Label Content="{Binding Path=Collection.A10}" Grid.Column="2" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" FontSize="48" FontWeight="Bold"/>
+            <Label Content="{Binding Path=Collection.A11}" Grid.Column="1" HorizontalAlignment="Center"  Grid.Row="1" VerticalAlignment="Center" FontSize="48" FontWeight="Bold"/>
+            <Label Content="{Binding Path=Collection.A12}" HorizontalAlignment="Center"  Grid.Row="1" VerticalAlignment="Center" FontSize="48" FontWeight="Bold"/>
+            <Label Content="{Binding Path=Collection.A20}" HorizontalAlignment="Center"  Grid.Row="2" VerticalAlignment="Center" FontSize="48" FontWeight="Bold"/>
+            <Label Content="{Binding Path=Collection.A21}" Grid.Column="1" HorizontalAlignment="Center"  Grid.Row="2" VerticalAlignment="Center" FontSize="48" FontWeight="Bold"/>
+            <Label Content="{Binding Path=Collection.A22}" Grid.Column="2" HorizontalAlignment="Center"  Grid.Row="2" VerticalAlignment="Center" FontSize="48" FontWeight="Bold"/>
 
             <Border BorderBrush="Black" BorderThickness="1" Grid.Column="0" Grid.Row="0"></Border>
             <Border BorderBrush="Black" BorderThickness="1" Grid.Column="0" Grid.Row="1"></Border>
@@ -61,7 +70,7 @@
 
         </Grid>
         <Border BorderBrush="Black" BorderThickness="2" Grid.Column="1" Grid.Row="2"></Border>
-
+       
         <Label Content="Team" Grid.Column="2" HorizontalAlignment="Center"  Grid.Row="1" VerticalAlignment="Top" FontSize="18"/>
         <Label Content="Team" HorizontalAlignment="Center"  Grid.Row="1" VerticalAlignment="Top" FontSize="18"/>
         <Label Content="X" Grid.Column="2" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Margin="46,22,0,0" FontSize="48"/>
