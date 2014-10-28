@@ -15,9 +15,13 @@ namespace Tic_Tac_Toe_Simulator
             {
                 return "X";
             }
-            else 
+            else if((int)value==0)
             {
                 return "O";
+            }
+            else
+            {
+                return "";
             }
         }
 

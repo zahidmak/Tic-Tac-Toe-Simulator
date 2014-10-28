@@ -27,14 +27,14 @@ namespace Tic_Tac_Toe_Simulator
         public MainWindow()
         {
             InitializeComponent();
-           // MainGrid.DataContext = TicTacToe;
+            // MainGrid.DataContext = TicTacToe;
             TicTacToe1.Collection = coll;
             MainGrid.DataContext = TicTacToe1;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-           
+
             TicTacToe1.Start();
             SyncArrayAndCollection();
         }
@@ -50,7 +50,7 @@ namespace Tic_Tac_Toe_Simulator
             coll.Add(new Element() { Position = "20", Value = TicTacToe1.Game[2, 0] });
             coll.Add(new Element() { Position = "21", Value = TicTacToe1.Game[2, 1] });
             coll.Add(new Element() { Position = "22", Value = TicTacToe1.Game[2, 2] });
-           
+
 
         }
     }
