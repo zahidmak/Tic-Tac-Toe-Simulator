@@ -22,36 +22,24 @@ namespace Tic_Tac_Toe_Simulator
     /// </summary>
     public partial class MainWindow : Window
     {
-        TicTacToe TicTacToe1 = new TicTacToe();
-        ObservableCollection<Element> coll = new ObservableCollection<Element>();
+        TicTacToe TicTacToe = new TicTacToe();
         public MainWindow()
         {
             InitializeComponent();
-           // MainGrid.DataContext = TicTacToe;
-            TicTacToe1.Collection = coll;
-            MainGrid.DataContext = TicTacToe1;
+            MainGrid.DataContext = TicTacToe;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-           
-            TicTacToe1.Start();
-            SyncArrayAndCollection();
+            TicTacToe.Start();
         }
-        public void SyncArrayAndCollection()
-        {
-            coll.Clear();
-            coll.Add(new Element() { Position = "00", Value = TicTacToe1.Game[0, 0] });
-            coll.Add(new Element() { Position = "01", Value = TicTacToe1.Game[0, 1] });
-            coll.Add(new Element() { Position = "02", Value = TicTacToe1.Game[0, 2] });
-            coll.Add(new Element() { Position = "10", Value = TicTacToe1.Game[1, 0] });
-            coll.Add(new Element() { Position = "11", Value = TicTacToe1.Game[1, 1] });
-            coll.Add(new Element() { Position = "12", Value = TicTacToe1.Game[1, 2] });
-            coll.Add(new Element() { Position = "20", Value = TicTacToe1.Game[2, 0] });
-            coll.Add(new Element() { Position = "21", Value = TicTacToe1.Game[2, 1] });
-            coll.Add(new Element() { Position = "22", Value = TicTacToe1.Game[2, 2] });
-           
 
+        private void Reset_Click(object sender, RoutedEventArgs e)
+        {
+            TicTacToe.XWins = 0;
+            TicTacToe.OWins = 0;
+            TicTacToe.Ties = 0;
         }
+
     }
 }

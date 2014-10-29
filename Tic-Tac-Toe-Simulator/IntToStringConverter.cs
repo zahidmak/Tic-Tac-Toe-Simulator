@@ -5,19 +5,31 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Data;
 
-namespace Tic_Tac_Toe_Simulator 
+namespace Tic_Tac_Toe_Simulator
 {
-    class IntToStringConverter: IValueConverter
+    class IntToStringConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
-            if((int)value==1)
+            if (value != null)
             {
-                return "X";
+                if (value.ToString() == "1" )
+                {
+                    return "X";
+                }
+                else if (value.ToString() == "0" )
+                {
+                    return "O";
+                }
+                else
+                {
+                    return "";
+                }
+
             }
-            else 
+            else
             {
-                return "O";
+                return "";
             }
         }
 
