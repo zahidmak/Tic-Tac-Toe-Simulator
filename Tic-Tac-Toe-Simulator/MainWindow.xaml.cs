@@ -29,16 +29,16 @@ namespace Tic_Tac_Toe_Simulator
             MainGrid.DataContext = TicTacToe;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            TicTacToe.Start();
-        }
-
         private void Reset_Click(object sender, RoutedEventArgs e)
         {
             TicTacToe.XWins = 0;
             TicTacToe.OWins = 0;
             TicTacToe.Ties = 0;
+        }
+
+        private void Simulate_Click(object sender, RoutedEventArgs e)
+        {
+            TicTacToe.Start();
         }
 
     }

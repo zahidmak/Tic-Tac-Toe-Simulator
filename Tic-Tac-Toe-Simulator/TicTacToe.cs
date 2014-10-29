@@ -18,7 +18,6 @@ namespace Tic_Tac_Toe_Simulator
         private int ties;
         private int currentPlayer;
         private bool isWinnerDeclared;
-
         private string tl;
         private string tm;
         private string tr;
@@ -29,6 +28,7 @@ namespace Tic_Tac_Toe_Simulator
         private string bm;
         private string br;
 
+        //Public properties
         public Random Random;
         public string TL { get { return tl; } set { tl = value; NotifyPropertyChanged(); } }
         public string TM { get { return tm; } set { tm = value; NotifyPropertyChanged(); } }
