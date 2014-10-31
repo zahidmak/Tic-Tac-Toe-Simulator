@@ -1,2 +1,1 @@
-Tic-Tac-Toe-Simulator
-=====================
+Tic-Tac-Toe-Simulator (AI Version)
